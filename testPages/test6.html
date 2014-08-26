@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wowza Video Chat</title>
+    <style type="text/css" media="screen">
+        html, body  { height:100%; }
+        body { margin:0; padding:0; overflow:auto; text-align:center; background-color: #ffffff; }
+        object:focus { outline:none; }
+        #flashContent { display:none; }
+    </style>
+    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script type="text/javascript">
+        window.fakeIdClient = 6;
+    </script>
+    <script data-main="../script/main" src="../vendors/require/require.js"></script>
+</head>
+<body>
+<header><h1>&nbsp;</h1></header>
+<h3>Видеочат (этап 1)</h3>
+<br>
+<div class="units-row panels">
+    <div class="unit-60 left-panel">
+        <textarea readonly="readonly">Текстовый чат</textarea>
+        <div class="units-row units-split send-form">
+            <div class="unit-65">
+                <textarea readonly="readonly">Новое сообщение</textarea>
+            </div>
+            <div class="unit-35">
+                <button>Отправить</button>
+            </div>
+        </div>
+    </div>
+    <div class="unit-40 right-panel">
+
+        <div id="flashContent">
+            <p>
+                To view this page ensure that Adobe Flash Player version
+                11.1.0 or greater is installed.
+            </p>
+            <script type="text/javascript">
+                var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+                document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"
+                        + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+
+                window.flashIsJsReady = function() {
+                    console.log('flashIsJsReady (HOOK)');
+                    return false;
+                }
+            </script>
+        </div>
+
+        <noscript>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="300" id="VideoChat">
+                <param name="movie" value="../assets/VideoChat.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="true" />
+                <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="../assets/VideoChat.swf" width="100%" height="100%">
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#ffffff" />
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="allowFullScreen" value="true" />
+                    <!--<![endif]-->
+                    <!--[if gte IE 6]>-->
+                    <p>
+                        Either scripts and active content are not permitted to run or Adobe Flash Player version
+                        11.1.0 or greater is not installed.
+                    </p>
+                    <!--<![endif]-->
+                    <a href="http://www.adobe.com/go/getflashplayer">
+                        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+                    </a>
+                    <!--[if !IE]>-->
+                </object>
+                <!--<![endif]-->
+            </object>
+        </noscript>
+        <div class="units-row units-split">
+            <div class="unit-50">
+                <button id="btn-start" class="btn btn-green width-100">Start videochat</button>
+            </div>
+            <div class="unit-50">
+                <button id="btn-stop" class="btn btn-red width-100">Stop videochat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
